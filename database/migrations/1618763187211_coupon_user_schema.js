@@ -18,12 +18,6 @@ class CouponUserSchema extends Schema {
         .onDelete("cascade");
 
       table
-        .foreign("product_id")
-        .references("id")
-        .inTable("products")
-        .onDelete("cascade");
-
-      table
         .foreign("user_id")
         .references("id")
         .inTable("users")

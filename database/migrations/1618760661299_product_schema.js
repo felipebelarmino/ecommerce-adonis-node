@@ -12,18 +12,19 @@ class ProductSchema extends Schema {
       table.text("description");
       table.decimal("price", 6, 2);
       table.timestamps();
+
       table
         .foreign("image_id")
         .references("id")
         .inTable("images")
         .onDelete("cascade");
     });
+
     this.create("image_product", (table) => {
       table.increments();
       table.integer("image_id").unsigned();
       table.integer("product_id").unsigned();
       table
-        .foreign("image_id")
         .foreign("image_id")
         .references("id")
         .inTable("images")
@@ -35,6 +36,7 @@ class ProductSchema extends Schema {
         .inTable("products")
         .onDelete("cascade");
     });
+    
     this.create("category_product", (table) => {
       table.increments();
       table.integer("product_id").unsigned();

@@ -32,7 +32,7 @@ module.exports = {
   sqlite: {
     client: 'mysql',
     connection: {
-      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.sqlite`)
+      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.mysql`)
     },
     useNullAsDefault: true
   },
@@ -51,10 +51,10 @@ module.exports = {
     client: 'mysql',
     connection: {
       host: Env.get('DB_HOST', 'localhost'),
-      port: Env.get('DB_PORT', ''),
+      port: Env.get('DB_PORT', '3306'),
       user: Env.get('DB_USER', 'root'),
-      password: Env.get('DB_PASSWORD', ''),
-      database: Env.get('DB_DATABASE', 'adonis')
+      password: Env.get('DB_PASSWORD', '@D14m09#**651205'),
+      database: Env.get('DB_DATABASE', 'infoway-db')
     }
   },
 

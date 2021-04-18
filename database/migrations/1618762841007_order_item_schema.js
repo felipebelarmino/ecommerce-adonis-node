@@ -9,7 +9,7 @@ class OrderItemSchema extends Schema {
       table.increments();
       table.integer("product_id").unsigned();
       table.integer("quantity").unsigned();
-      table.decimal("subtotal", 6, 2);
+      table.decimal("subtotal", 8, 2);
       table.integer("order_id").unsigned();
 
       table
@@ -23,8 +23,6 @@ class OrderItemSchema extends Schema {
         .references("id")
         .inTable("orders")
         .onDelete("cascade");
-        
-      table.timestamps();
     });
   }
 
